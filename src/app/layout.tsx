@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,80 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      {/*<header className="bg-teal-800 text-white p-4 flex gap-10">
+        <Link href="/">Mcoder</Link>
+        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/Explore">Explore</Link>
+        <Link href="/courses/basic">Courses</Link>
+        <Link href="/blogs">Blogs</Link>
+        </header>
+        {children}
+        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
+        
+        
+        {/* Footer */}
+        <header className="bg-gray-800 p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-white font-bold text-xl">
+          <Link href="/">Mcoder</Link>
+        </div>
+        <ul className="flex space-x-4">
+          <li>
+            <Link href="/home" className="text-white hover:text-gray-400">Home</Link>
+          </li>
+          <li>
+            <Link href="/dashboard" className="text-white hover:text-gray-400">Dashboard</Link>
+          </li>
+          
+          <li>
+            <Link href="/courses/basic" className="text-white hover:text-gray-400">Courses</Link>
+          </li>
+          
+          <li>
+            <Link href="/Explore" className="text-white hover:text-gray-400">Explore</Link>
+
+          </li>
+          <li>
+            <Link href="/blogs" className="text-white hover:text-gray-400">Blog</Link>
+          </li>
+          <li>
+            <Link href="/about" className="text-white hover:text-gray-400">About Us</Link>
+          </li>
+          
+        </ul>
+      </div>
+      </header>
+        {children}
+        <footer
+      className="bg-gray-800 text-white p-4 shadow-inner"
+      style={{
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+      }}
+    >
+      <div
+        className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left"
+      >
+        <p className="text-sm">Powered By Maryam Riaz. All rights reserved.</p>
+        <div className="flex space-x-4 mt-2 sm:mt-0">
+          <Link href="/privacy-policy" className="hover:underline">
+            Privacy Policy
+          </Link>
+          <Link href="/terms-of-service" className="hover:underline">
+            Terms of Service
+          </Link>
+        </div>
+      </div>
+    </footer>
+        </body>
     </html>
   );
 }
